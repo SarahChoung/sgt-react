@@ -9,7 +9,11 @@ class App extends React.Component {
   }
 
   render() {
-    return null;
+    return (
+      <header>
+        <h1>Student Grade Table</h1>
+      </header>
+    );
   }
 }
 
