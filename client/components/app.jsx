@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React from 'react';
 import Header from './header';
-import Grade from './grade';
+import GradeTable from './gradeTable';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,7 +15,6 @@ class App extends React.Component {
     fetch('./api/grades')
       .then(res => res.json())
       .then(grades => {
-        console.log(grades);
         this.setState({
           grades: grades
         });
@@ -26,7 +25,7 @@ class App extends React.Component {
     return (
       <div>
         <Header/>
-        <Grade/>
+        <GradeTable props = {this.state.grades}/>
       </div>
     );
   }
