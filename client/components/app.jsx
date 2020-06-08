@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import React from 'react';
+import Header from './header';
 
 class App extends React.Component {
   constructor(props) {
@@ -22,9 +23,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <header>
-        <h1>Student Grade Table</h1>
-      </header>
+      <Header/>
     );
   }
 }
