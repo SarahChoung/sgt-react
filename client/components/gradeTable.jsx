@@ -3,7 +3,7 @@ import React from 'react';
 import Grade from './grade';
 
 function GradeTable(grades) {
-  const gradeList = grades.props;
+  const gradeList = grades.grades;
   const GradeRows = gradeList.map(grade => {
     return (
       <Grade

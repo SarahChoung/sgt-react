@@ -35,6 +35,12 @@
       "course": "Web Dev",
       "grade": 60,
       "id": 35
+    },
+    {
+      "name": "Sally Smith",
+      "course": "Web Dev",
+      "grade": 60,
+      "id": 36
     }
   ]
 }
