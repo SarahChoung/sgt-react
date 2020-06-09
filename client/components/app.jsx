@@ -2,6 +2,7 @@
 import React from 'react';
 import Header from './header';
 import GradeTable from './gradeTable';
+import GradeForm from './gradeForm';
 
 class App extends React.Component {
   constructor(props) {
@@ -41,14 +42,19 @@ class App extends React.Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(newGrade)
-    });
+    })
+      .then(res => res.json())
+      .then(result => console.log(result));
   }
 
   render() {
     return (
       <div className="container">
         <Header props = {this.getAverageGrade()}/>
-        <GradeTable props = {this.state.grades}/>
+        <div className="row">
+          <GradeTable props = {this.state.grades}/>
+          <GradeForm/>
+        </div>
       </div>
     );
   }
