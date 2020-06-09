@@ -16,18 +16,20 @@ function GradeTable(grades) {
   });
 
   return (
-    <table className="table table-striped table-bordered">
-      <thead className = 'thead-dark'>
-        <tr>
-          <th>Student Name</th>
-          <th>Course</th>
-          <th>Grade</th>
-        </tr>
-      </thead>
-      <tbody>
-        {GradeRows}
-      </tbody>
-    </table>
+    <div className = "col-8">
+      <table className="table table-striped table-bordered">
+        <thead className = 'thead-dark'>
+          <tr>
+            <th>Student Name</th>
+            <th>Course</th>
+            <th>Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+          {GradeRows}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
