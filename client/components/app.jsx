@@ -53,16 +53,19 @@ class App extends React.Component {
   }
 
   deleteGrade(targetGrade) {
-    event.preventDefault();
-    fetch('./api/grades/:id', {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(targetGrade)
-    })
-      .then(res => res.json())
-      .then(res => console.log(res));
+    fetch(`./api/grades/${targetGrade}`, {
+      method: 'DELETE'
+    }).then(res => res.json())
+      .then(grades => {
+        const allGrades = this.state.grades.slice();
+        const newGrades = [];
+        for (let i = 0; i < allGrades.length; i++) {
+          if (allGrades[i].id !== targetGrade) {
+            newGrades.push(allGrades[i]);
+          }
+        }
+        this.setState({ grades: newGrades });
+      });
   }
 
   render() {
@@ -70,7 +73,7 @@ class App extends React.Component {
       <div className="container">
         <Header props = {this.getAverageGrade()}/>
         <div className="row">
-          <GradeTable grades = {this.state.grades} deleteGrade = {this.deletegrade}/>
+          <GradeTable grades = {this.state.grades} deleteGrade = {this.deleteGrade}/>
           <GradeForm addNewGrade = {this.addNewGrade}/>
         </div>
       </div>

@@ -17,30 +17,6 @@
       "name": "Douglas Crockford",
       "course": "JavaScript",
       "grade": 100
-    },
-    {
-      "name": "Sally Smith",
-      "course": "Web Dev",
-      "grade": 90,
-      "id": 33
-    },
-    {
-      "name": "Sarah",
-      "course": "wee",
-      "grade": 4,
-      "id": 34
-    },
-    {
-      "name": "Sally Smith",
-      "course": "Web Dev",
-      "grade": 60,
-      "id": 35
-    },
-    {
-      "name": "Sally Smith",
-      "course": "Web Dev",
-      "grade": 60,
-      "id": 36
     }
   ]
 }

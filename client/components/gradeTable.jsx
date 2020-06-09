@@ -4,13 +4,15 @@ import Grade from './grade';
 
 function GradeTable(grades) {
   const gradeList = grades.grades;
-  const GradeRows = gradeList.map(grade => {
+  const gradeRows = gradeList.map(grade => {
     return (
       <Grade
         key = {grade.id}
+        id = {grade.id}
         name = {grade.name}
         course = {grade.course}
         grade = {grade.grade}
+        deleteGrade={grades.deleteGrade}
       />
     );
   });
@@ -27,7 +29,7 @@ function GradeTable(grades) {
           </tr>
         </thead>
         <tbody>
-          {GradeRows}
+          {gradeRows}
         </tbody>
       </table>
     </div>
