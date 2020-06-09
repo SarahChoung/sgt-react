@@ -11,6 +11,7 @@ class App extends React.Component {
       grades: []
     };
     this.getAverageGrade = this.getAverageGrade.bind(this);
+    this.addNewGrade = this.addNewGrade.bind(this);
   }
 
   componentDidMount() {
@@ -26,17 +27,19 @@ class App extends React.Component {
 
   getAverageGrade() {
     if (this.state.grades.length > 0) {
-      const gradesArray = this.state.grades.slice();
-      const averageArr = [];
-      gradesArray.map(grade => { averageArr.push(grade.grade); });
-      const sum = averageArr.reduce((total, num) => { return total + num; });
-      const average = sum / gradesArray.length;
-      return average;
-    }
+      const gradesArray = this.state.grades;
+      const indivGrades = [];
+      gradesArray.map(grade => {
+        indivGrades.push(grade.grade);
+      });
+      const total = indivGrades.reduce((total, value) => total + value);
+      return Math.round(total / gradesArray.length);
+    } else return this.state.grades[0];
   }
 
   addNewGrade(newGrade) {
-    fetch('.api/grades', {
+    event.preventDefault();
+    fetch('./api/grades', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -44,7 +47,11 @@ class App extends React.Component {
       body: JSON.stringify(newGrade)
     })
       .then(res => res.json())
-      .then(result => console.log(result));
+      .then(grade => {
+        const allGrades = this.state.grades.concat(grade);
+        this.setState({ grades: allGrades });
+      })
+      .catch(err => console.err(err.message));
   }
 
   render() {
@@ -53,7 +60,7 @@ class App extends React.Component {
         <Header props = {this.getAverageGrade()}/>
         <div className="row">
           <GradeTable props = {this.state.grades}/>
-          <GradeForm/>
+          <GradeForm addNewGrade = {this.addNewGrade}/>
         </div>
       </div>
     );
