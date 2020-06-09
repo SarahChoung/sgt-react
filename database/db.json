@@ -29,6 +29,12 @@
       "course": "wee",
       "grade": 4,
       "id": 34
+    },
+    {
+      "name": "Sally Smith",
+      "course": "Web Dev",
+      "grade": 60,
+      "id": 35
     }
   ]
 }
