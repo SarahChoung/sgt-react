@@ -16,8 +16,8 @@ function GradeTable(grades) {
   });
 
   return (
-    <table className="table">
-      <thead>
+    <table className="table table-striped table-bordered">
+      <thead className = 'thead-dark'>
         <tr>
           <th>Student Name</th>
           <th>Course</th>

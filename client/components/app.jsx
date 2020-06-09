@@ -36,8 +36,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <Header className = "d-flex" props = {this.getAverageGrade()}/>
+      <div className="container">
+        <Header props = {this.getAverageGrade()}/>
         <GradeTable props = {this.state.grades}/>
       </div>
     );
