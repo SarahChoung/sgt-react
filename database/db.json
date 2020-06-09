@@ -25,16 +25,10 @@
       "id": 33
     },
     {
-      "name": "Per Son",
-      "course": "Web Dev",
-      "grade": 60,
+      "name": "Sarah",
+      "course": "wee",
+      "grade": 4,
       "id": 34
-    },
-    {
-      "name": "Sally Smith",
-      "course": "Web Dev",
-      "grade": 9,
-      "id": 35
     }
   ]
 }
