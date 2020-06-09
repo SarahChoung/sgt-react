@@ -23,6 +23,7 @@ function GradeTable(grades) {
             <th>Student Name</th>
             <th>Course</th>
             <th>Grade</th>
+            <th>Operations</th>
           </tr>
         </thead>
         <tbody>
