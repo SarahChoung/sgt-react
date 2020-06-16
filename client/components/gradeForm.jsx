@@ -92,8 +92,8 @@ class GradeForm extends React.Component {
             onChange={this.handleChange} />
         </div>
         <div className="text-right">
-          <button type="submit" className="btn btn-secondary">Add</button>
-          <button type="reset" className="btn btn-danger ml-1">Cancel</button>
+          <button type="submit" className="btn btn-primary">Add</button>
+          <button type="reset" className="btn btn-secondary ml-1">Cancel</button>
         </div>
       </form>
     );

@@ -3,14 +3,16 @@ import React from 'react';
 import Grade from './grade';
 
 function GradeTable(grades) {
-  const gradeList = grades.props;
-  const GradeRows = gradeList.map(grade => {
+  const gradeList = grades.grades;
+  const gradeRows = gradeList.map(grade => {
     return (
       <Grade
         key = {grade.id}
+        id = {grade.id}
         name = {grade.name}
         course = {grade.course}
         grade = {grade.grade}
+        deleteGrade={grades.deleteGrade}
       />
     );
   });
@@ -23,10 +25,11 @@ function GradeTable(grades) {
             <th>Student Name</th>
             <th>Course</th>
             <th>Grade</th>
+            <th>Operations</th>
           </tr>
         </thead>
         <tbody>
-          {GradeRows}
+          {gradeRows}
         </tbody>
       </table>
     </div>
